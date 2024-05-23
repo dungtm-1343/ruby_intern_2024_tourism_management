@@ -47,6 +47,8 @@ gem "ancestry"
 
 gem "figaro"
 
+gem "ransack"
+
 group :development, :test do
   gem "debug", platforms: %i(mri mingw x64_mingw)
   gem "pry-rails"

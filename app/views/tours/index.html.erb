@@ -3,6 +3,12 @@
     <span class="tours-title"><%= t "tours.title" %></span>
     <span class="tours-subtitle"><%= t "tours.subtitle" %></span>
   </div>
+  <%= form_for @tours do |f| %>
+    <%= f.label :tour_name_cont %>
+    <%= f.search_field :tour_name_cont %>
+
+    <%= f.submit %>
+  <% end %>
   <div class="row tours-container">
     <%= render @tours %>
   </div>

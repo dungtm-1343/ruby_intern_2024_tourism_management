@@ -1,0 +1,9 @@
+<%= form_tag tours_path, method: :get do |f| %>
+  <%= text_field_tag :name, nil,
+    class: "form__control",
+    name: "tour[tour_name]",
+    value: value_search(params[:tour], :tour_name)%>
+  <%= button_tag :submit, class: "form__search-btn" do %>
+    <span class="icon-search-left">Search</span>
+  <% end %>
+<% end %>

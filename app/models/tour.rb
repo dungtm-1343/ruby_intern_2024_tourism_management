@@ -20,6 +20,10 @@ class Tour < ApplicationRecord
   end
 
   scope :upcoming, ->{order start_date: :asc}
+  scope :search_tour, lambda{|search|
+    search&.squish! if search
+    ransack(tour_name_cont: search).result
+  }
 
   private
   def end_date_after_start_date
