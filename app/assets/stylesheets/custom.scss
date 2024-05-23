@@ -74,3 +74,55 @@ a {
     }
   }
 }
+
+.tours {
+  &-title {
+    font-size: 2.25rem;
+  }
+
+  &-subtitle {
+    font-size: 1.5rem;
+    color: #666;
+  }
+
+  &-item {
+    margin-top: 20px;
+
+    &-container {
+      width: 80%;
+      height: 140px;
+    }
+
+    &-first {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-name {
+      font-size: 1.25rem;
+    }
+
+    &-address {
+      font-size: 1rem;
+      color: #666;
+      margin-left: 10px;
+    }
+
+    &-second {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.pagy {
+  justify-content: center;
+  margin: 50px 0;
+  gap: 20px;
+
+  a {
+    padding: 4px 10px;
+    background-color: #ddd;
+    cursor: pointer;
+  }
+}

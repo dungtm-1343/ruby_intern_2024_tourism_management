@@ -1,0 +1,10 @@
+<div class="tours">
+  <div class="row text-center pt-4">
+    <span class="tours-title"><%= t "tours.title" %></span>
+    <span class="tours-subtitle"><%= t "tours.subtitle" %></span>
+  </div>
+  <div class="row tours-container">
+    <%= render @tours %>
+  </div>
+  <%== pagy_nav(@pagy) %>
+</div>

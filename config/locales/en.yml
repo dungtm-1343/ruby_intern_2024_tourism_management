@@ -17,5 +17,15 @@ en:
   footer_left: "2024 Intern Ruby"
   footer_right: "Sun*"
 
+  tours:
+    title: "All Available Tours Now"
+    subtitle: "If you have any questions, please contact the admin."
+    duration: "Duration: "
+    day:
+      one: "day"
+      other: "days"
+    start: "Start: "
+    price: "Price: $"
+
   error:
     end_day_start_date: "End day must be after the start date"

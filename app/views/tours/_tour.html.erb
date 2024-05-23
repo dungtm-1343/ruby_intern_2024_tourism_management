@@ -1,0 +1,25 @@
+<div class="col-6 tours-item">
+  <div class="tours-item-container border border-1 border-gray mx-auto p-2 rounded-3">
+    <div class="tours-item-first">
+      <span class="tours-item-name">
+        <%= tour.tour_name %>
+        <span class="tours-item-address"><%= tour.city %></span>
+      </span>
+      
+      <span class="tours-item-duration">
+        <%= t "tours.duration" %>
+        <%= pluralize tour.day_duration, t("tours.day", count: tour.day_duration) %>
+      </span>
+      <span class="tours-item-start">
+        <%= t "tours.start" %>
+        <%= tour.start_date %>
+      </span>
+    </div>
+    <div class="tours-item-second">
+      <span class="tours-item-price">
+        <%= t "tours.price" %>
+        <%= tour.price %>
+      </span>
+    </div>
+  </div>
+</div>

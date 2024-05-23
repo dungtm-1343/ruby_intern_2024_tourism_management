@@ -8,9 +8,9 @@ class Tour < ApplicationRecord
   validates :tour_name, presence: true,
                         length: {maximum: Settings.tour.max_len_name}
   validates :city, :tour_destination, :description, presence: true
-  validates :duration, presence: true,
+  validates :day_duration, presence: true,
                        numericality: {only_integer: true,
-                                      greater_than: Settings.tour.max_duration}
+                                      maximum: Settings.tour.max_duration}
   validates :start_date, presence: true
   validates :end_date, presence: true
   validate :end_date_after_start_date
@@ -18,6 +18,8 @@ class Tour < ApplicationRecord
   has_one_attached :image do |attachable|
     attachable.variant :display, resize_to_limit: Settings.tour.limit_250_250
   end
+
+  scope :upcoming, ->{order start_date: :asc}
 
   private
   def end_date_after_start_date
