@@ -1,0 +1,68 @@
+<section class="text-center text-lg-start">
+  <div class="container py-4">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="card cascading-right bg-body-tertiary backdrop-blur-30"
+            style="margin-right: -50px">
+          <div class="card-body p-5 shadow-5">
+            <h2 class="fw-bold mb-5 text-center"><%= t "sign_up_now"%></h2>
+            <%= form_with model: @user do |f| %>
+              <%= render "shared/error_messages", resource: @user  %>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div data-mdb-input-init class="form-outline">
+                    <%= f.label :first_name, class: "form-label", for: "user_first_name" do %>
+                      <strong><%= t "first_name" %></strong>
+                    <% end %>
+                    <%= f.text_field :first_name, id: "user_first_name", class: "form-control" %>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div data-mdb-input-init class="form-outline">
+                    <%= f.label :last_name, class: "form-label", for: "user_last_name" do %>
+                      <strong><%= t "last_name" %></strong>
+                    <% end %>
+                    <%= f.text_field :last_name, id: "user_last_name", class: "form-control" %>
+                  </div>
+                </div>
+              </div>
+              <!-- Email input -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <%= f.label :email, class: "form-label", for: "user_email" do %>
+                  <strong><%= t "email_address" %></strong>
+                <% end %>
+                <%= f.email_field :email, id: "user_email", class: "form-control" %>
+              </div>
+              <!-- Password input -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <%= f.label :password, class: "form-label", for: "user_password" do %>
+                  <strong><%= t "password" %></strong>
+                <% end %>
+                <%= f.password_field :password, id: "user_password", class: "form-control" %>
+              </div>
+              <!-- Password confirmation input -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <%= f.label :password_confirmation, class: "form-label", for: "user_password_confirmation" do %>
+                  <strong><%= t "password_confirmation" %></strong>
+                <% end %>
+                <%= f.password_field :password_confirmation, id: "user_password_confirmation", class: "form-control" %>
+              </div>
+              <!-- Checkbox -->
+              <div class="form-check d-flex justify-content-center mb-4">
+                <%= f.check_box :subscribe_newsletter, class: "form-check-input me-2", id: "form2Example33", checked: true %>
+                <%= f.label :subscribe_newsletter, t("subscribe_to_our_newsletter"), class: "form-check-label mx-2", for: "form2Example33" %>
+              </div>
+              <!-- Submit button -->
+              <div class="text-center w-100">
+                <%= f.submit t("sign_up"), data: { mdb_button_init: true, mdb_ripple_init: true }, class: "btn btn-primary btn-block mb-4 px-5" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 mb-5 mb-lg-0 ">
+          <%= image_tag "sign_up.jpg", class: "w-100 rounded-4 shadow-4" %>
+      </div>
+    </div>
+  </div>
+</section>

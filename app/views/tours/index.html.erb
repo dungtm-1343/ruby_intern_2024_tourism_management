@@ -1,10 +1,15 @@
 <div class="tours">
   <div class="row text-center pt-4">
-    <span class="tours-title"><%= t "tours.title" %></span>
-    <span class="tours-subtitle"><%= t "tours.subtitle" %></span>
+    <h1 class="tours-title"><%= t "tours.title" %></h1>
+    <p class="tours-subtitle"><%= t "tours.subtitle" %></p>
+  </div>
+  <div class="row pt-4 pb-4">
+    <%= render "search_form" %>
   </div>
   <div class="row tours-container">
     <%= render @tours %>
   </div>
-  <%== pagy_nav(@pagy) %>
+  <div class="container py-5">
+    <%== pagy_nav(@pagy) %>
+  </div>
 </div>

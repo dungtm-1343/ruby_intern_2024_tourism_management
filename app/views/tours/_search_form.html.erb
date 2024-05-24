@@ -1,0 +1,51 @@
+<%= form_tag(tours_path, method: :get) do |f| %>
+  <div class="row">
+    <div class="col-8">
+      <%= label_tag :name, t("tours.search.name"), class: "form-label" %>
+      <%= text_field_tag :name, params[:name], class: "form-control" %>
+    </div>
+    <div class="col-4 d-flex align-items-center">
+      <div class="col-6 pe-2">
+        <%= label_tag :min_duration, t("tours.search.min_duration"), class: "form-label d-block" %>
+        <%= number_field_tag :min_duration, params[:min_duration], class: "form-control" %>
+      </div>
+      <div class="col-6 ps-2">
+        <%= label_tag :max_duration, t("tours.search.max_duration"), class: "form-label d-block" %>
+        <%= number_field_tag :max_duration, params[:max_duration], class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <%= label_tag :city, t("tours.search.city"), class: "form-label" %>
+      <%= text_field_tag :city, params[:city], class: "form-control" %>
+    </div>
+    <div class="col-4 d-flex align-items-center">
+      <div class="col-6 pe-2">
+        <%= label_tag :min_price, t("tours.search.min_price"), class: "form-label d-block" %>
+        <%= number_field_tag :min_price, params[:min_price], class: "form-control" %>
+      </div>
+      <div class="col-6 ps-2">
+        <%= label_tag :max_price, t("tours.search.max_price"), class: "form-label d-block" %>
+        <%= number_field_tag :max_price, params[:max_price], class: "form-control" %>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-6 d-flex align-items-center">
+      <%= label_tag :start_date, t("tours.search.start_date"), class: "form-label d-block" %>
+      <%= date_field_tag :start_date, params[:start_date], class: "form-control" %>
+    </div>
+    <div class="col-3 mt-2">
+      <div class="form-check form-check-inline">
+        <%= check_box_tag "search_type", true, params[:search_type] == "true", class: "form-check-input" %>
+        <%= label_tag "search_type_true", t("tours.search.or"), class: "form-check-label" %>
+      </div>
+    </div>    
+  </div>
+  <div class="row mt-2">
+    <div class="col-3 mx-auto">
+      <%= submit_tag t("tours.search.action"), class: "btn btn-submit" %>
+    </div>
+  </div>
+<% end %>

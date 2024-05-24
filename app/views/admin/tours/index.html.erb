@@ -1,0 +1,45 @@
+<section class="intro">
+  <div class="gradient-custom-1 h-100">
+    <div class="mask d-flex align-items-center h-100">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="table-responsive bg-white">
+              <table class="table mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col"><%= t "tour_name" %></th>
+                    <th scope="col"><%= t "city" %></th>
+                    <th scope="col"><%= t "tour_destination" %></th>
+                    <th scope="col"><%= t "price" %></th>
+                    <th scope="col"><%= t "start_day" %></th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @tours.each do |tour| %>
+                    <tr>
+                      <td scope="row" class="fst-italic"><%= tour.tour_name %>
+                       </td>
+                      <td><%= tour.city %></td>
+                      <td><%= truncate(tour.tour_destination, length: 35, omission: "....") %></td>
+                      <td><%= number_to_currency(tour.price) %></td>
+                      <td><%= tour.start_date.strftime(Settings.dd_mm_yyyy) %></td>
+                      <td><%= link_to t("view"), admin_tour_path(tour) %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="d-flex justify-content-between py-4">
+      <%= link_to t("create_new"), new_admin_tour_path, class: "btn btn-primary" %>
+      <%== pagy_nav(@pagy) %>
+    </div>
+  </div>
+</section>

@@ -19,3 +19,19 @@ TourType.create(type_name: "Highland Mountain", ancestry: mountain_tour.id)
 	tour_type_id = Faker::Number.within(range: 3..6)
 	Tour.create!(tour_name:, city:, tour_destination:, description:, price:, day_duration:, start_date:, end_date:, tour_type_id:)
 end
+
+User.create!(role: 1, first_name:"Admin", last_name:"Trinh",
+            email:"admin@railstutorial.org", phone:"083504567", address:"HCM",
+            date_of_birth: "2003-01-01",
+            password: "123456",
+            password_confirmation:"123456",
+            activated: true,
+            activated_at: Time.zone.now)
+
+User.create!(role: 0, first_name:"User", last_name:"Trinh",
+            email:"User@railstutorial.org", phone:"083504567", address:"HN",
+            date_of_birth: "2003-01-01",
+            password: "123456",
+            password_confirmation:"123456",
+            activated: true,
+            activated_at: Time.zone.now)

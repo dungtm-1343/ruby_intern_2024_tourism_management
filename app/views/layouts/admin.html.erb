@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <title><%= t "base_title" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "admin", media: "all", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "custom", media: "all", "data-turbo-track": "reload" %>
+
+    <%= javascript_importmap_tags %>
+  </head>
+  <body>
+    <%= render "admin/shared/navbar" %>
+    <%= render "shared/flash_messages" %>
+    <div class="container-fluid">
+      <div class="row">
+        <%= render "admin/shared/vertical_navbar" %>
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <%= render "admin/shared/page_header" %>
+          </div>
+          <%= yield %>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
