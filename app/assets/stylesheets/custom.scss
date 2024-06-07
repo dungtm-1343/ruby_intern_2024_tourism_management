@@ -170,3 +170,36 @@ a {
   max-height: 295px;
   overflow-y: auto;
 }
+
+.image-box {
+  display: flex;
+  align-items: center;
+  .carousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    &-inner {
+      height: 300px;
+      width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .item {
+        display: none;
+      }
+    
+      .active {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    &-control {
+      display: flex;
+      justify-content: space-between;
+      width: 200px;
+    }
+  }
+}

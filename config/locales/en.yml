@@ -137,6 +137,8 @@ en:
       tag: "#"
       back: "<< Back to Tours Page"
       relevant: "Relevant Tours"
+    carousel_next: "Next >>"
+    carousel_prev: "<< Prev"
 
   vouchers:
     details: "Voucher Details"
