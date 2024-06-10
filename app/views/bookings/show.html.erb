@@ -1,0 +1,22 @@
+<div class="mt-2">
+  <div class="row">
+    <div class="col-8">
+      <div class="row">
+        <p><i>Tour information</i></p>
+        <h3>
+          <%= @booking.tour.tour_name %>
+        </h3>
+        <p>
+          <i>Address:</i> <%= @booking.tour.tour_destination %>
+        </p>
+        <p>
+          <i>Start Date:</i> <%= @booking.tour.start_date %>
+        </p>
+      </div>
+      <div class="row mt-4">
+        <p><i>Booking information</i></p>
+        <p><%= @booking.user_id %></p>
+      </div>
+    </div>
+  </div>
+</div>

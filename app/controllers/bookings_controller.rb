@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
   include BookingsHelper
   before_action :authenticate_user!
-  before_action :set_tour
+  before_action :set_tour, only: %i(new create)
+  before_action :load_booking, only: :show
 
   def new
     @booking = current_user.bookings.build tour_id: @tour.id
@@ -28,7 +29,17 @@ class BookingsController < ApplicationController
     end
   end
 
+  def show; end
+
   private
+
+  def load_booking
+    @booking = Booking.includes(:tour).find_by(id: params[:id])
+    return if @booking && @booking.user == current_user
+
+    flash[:warning] = t "flash.booking.not_found"
+    redirect_to user_path current_user
+  end
 
   def set_tour
     @tour = Tour.find_by(id: params[:tour_id])

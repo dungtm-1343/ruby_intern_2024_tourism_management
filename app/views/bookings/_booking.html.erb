@@ -5,5 +5,5 @@
   <td><%= booking.phone_number %></td>
   <td><%= booking.started_date %></td>
   <td><%= booking.status %></td>
-  <td><%= link_to t("view"), "/" %></td>
+  <td><%= link_to t("view"), user_booking_path(booking.user_id) %></td>
 </tr>
