@@ -69,6 +69,10 @@ gem "omniauth-google-oauth2"
 
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 
+gem "grape"
+
+gem "grape-cancan"
+
 group :development, :test do
   gem "debug", platforms: %i(mri mingw x64_mingw)
   gem "factory_bot_rails"

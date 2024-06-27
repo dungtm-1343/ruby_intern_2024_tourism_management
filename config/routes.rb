@@ -33,4 +33,6 @@ Rails.application.routes.draw do
     resources :reviews
   end
   root "static_pages#home"
+
+  mount API::Base, at: "/"
 end
